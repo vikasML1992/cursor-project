@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Agentic AI - Transform Your Career with AI Agents</title>
+    <meta name="description" content="Learn to build, deploy, and monetize AI agents. Master the future of AI with our comprehensive course.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #667eea;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(255, 107, 107, 0.4);
+        }
+
+        /* Features Section */
+        .features {
+            background: white;
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Course Content */
+        .course-content {
+            background: #f8f9fa;
+            padding: 80px 0;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .content-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .content-item h4 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            background: white;
+            padding: 80px 0;
+        }
+
+        .pricing-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 500px;
+            margin: 0 auto;
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .price span {
+            font-size: 1.5rem;
+            opacity: 0.8;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .pricing-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .pricing-features li:before {
+            content: "✓ ";
+            color: #4ade80;
+            font-weight: bold;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: #f8f9fa;
+            padding: 80px 0;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: #667eea;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">AgenticAI Pro</div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#content">Curriculum</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="fade-in-up">Master Agentic AI</h1>
+            <p class="fade-in-up">Learn to build, deploy, and monetize AI agents that work autonomously. Join the AI revolution and future-proof your career with our comprehensive course.</p>
+            <a href="#pricing" class="cta-button fade-in-up">Enroll Now - $497</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose Our Agentic AI Course?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>From Zero to Hero</h3>
+                    <p>No prior AI experience needed. We'll take you from complete beginner to building sophisticated AI agents that can handle real-world tasks.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Monetization Strategies</h3>
+                    <p>Learn proven business models to monetize your AI agents. Turn your skills into a profitable business with our revenue strategies.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔧</div>
+                    <h3>Hands-on Projects</h3>
+                    <p>Build 10+ real-world AI agents including customer service bots, data analysis tools, and automated workflow systems.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Community Access</h3>
+                    <p>Join our exclusive community of AI developers. Network, collaborate, and stay updated with the latest agentic AI developments.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Lifetime Access</h3>
+                    <p>Get lifetime access to all course materials, updates, and new content. Learn at your own pace with no expiration date.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Job-Ready Skills</h3>
+                    <p>Master the skills that top companies are looking for. Our graduates work at Google, OpenAI, Microsoft, and other tech giants.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Content -->
+    <section id="content" class="course-content">
+        <div class="container">
+            <h2 class="section-title">What You'll Learn</h2>
+            <div class="content-grid">
+                <div class="content-item">
+                    <h4>Module 1: AI Agent Fundamentals</h4>
+                    <p>Understanding autonomous agents, decision-making frameworks, and agent architectures</p>
+                </div>
+                <div class="content-item">
+                    <h4>Module 2: Building Your First Agent</h4>
+                    <p>Hands-on coding with Python, LangChain, and OpenAI APIs to create functional agents</p>
+                </div>
+                <div class="content-item">
+                    <h4>Module 3: Advanced Agent Capabilities</h4>
+                    <p>Memory systems, tool usage, multi-agent coordination, and complex reasoning</p>
+                </div>
+                <div class="content-item">
+                    <h4>Module 4: Deployment & Scaling</h4>
+                    <p>Cloud deployment, monitoring, performance optimization, and scaling strategies</p>
+                </div>
+                <div class="content-item">
+                    <h4>Module 5: Business Applications</h4>
+                    <p>Customer service, data analysis, content creation, and workflow automation</p>
+                </div>
+                <div class="content-item">
+                    <h4>Module 6: Monetization & Business</h4>
+                    <p>Pricing strategies, market positioning, client acquisition, and business models</p>
+                </div>
+                <div class="content-item">
+                    <h4>Module 7: Ethics & Safety</h4>
+                    <p>Responsible AI development, bias mitigation, and safety best practices</p>
+                </div>
+                <div class="content-item">
+                    <h4>Module 8: Future of Agentic AI</h4>
+                    <p>Emerging trends, research directions, and staying ahead of the curve</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2 class="section-title">Enroll Today</h2>
+            <div class="pricing-card">
+                <h3>Complete Agentic AI Course</h3>
+                <div class="price">
+                    $497 <span>/one-time</span>
+                </div>
+                <ul class="pricing-features">
+                    <li>8 comprehensive modules (40+ hours)</li>
+                    <li>10+ hands-on projects</li>
+                    <li>Lifetime access to all content</li>
+                    <li>Exclusive community access</li>
+                    <li>Certificate of completion</li>
+                    <li>30-day money-back guarantee</li>
+                    <li>Bonus: AI Agent Templates ($200 value)</li>
+                    <li>Bonus: Business Strategy Guide ($150 value)</li>
+                </ul>
+                <a href="#" class="cta-button" style="background: white; color: #667eea;">Enroll Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Students Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"This course completely changed my career trajectory. I went from knowing nothing about AI to building agents that generate $5K/month in revenue."</p>
+                    <div class="testimonial-author">- Sarah Chen, Senior AI Engineer at Google</div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The practical projects and real-world applications made all the difference. I was able to land a job at a top AI startup within 3 months."</p>
+                    <div class="testimonial-author">- Marcus Rodriguez, AI Developer</div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The monetization strategies alone were worth 10x the course price. I'm now running a successful AI consulting business."</p>
+                    <div class="testimonial-author">- Jennifer Park, AI Consultant</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 AgenticAI Pro. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add fade-in animation to elements as they come into view
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all feature cards, content items, and testimonial cards
+        document.querySelectorAll('.feature-card, .content-item, .testimonial-card').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
