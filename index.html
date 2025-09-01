@@ -260,6 +260,101 @@
             color: #667eea;
         }
 
+        /* Timeline Section */
+        .timeline {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 80px 0;
+            color: white;
+        }
+
+        .timeline-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin: 3rem 0;
+            width: 100%;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: 0;
+            margin-right: 50%;
+            padding-right: 3rem;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: 50%;
+            margin-right: 0;
+            padding-left: 3rem;
+            text-align: left;
+        }
+
+        .timeline-content {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .timeline-icon {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+        }
+
+        .timeline-week {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .timeline-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .timeline-description {
+            font-size: 1rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
         /* Footer */
         footer {
             background: #333;
@@ -288,6 +383,28 @@
 
             .testimonial-grid {
                 grid-template-columns: 1fr;
+            }
+
+            /* Timeline responsive */
+            .timeline-line {
+                left: 30px;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                margin-left: 80px;
+                margin-right: 0;
+                padding-left: 1rem;
+                padding-right: 1rem;
+                text-align: left;
+            }
+
+            .timeline-icon {
+                left: 30px;
+                transform: translateY(-50%);
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
             }
         }
 
@@ -456,6 +573,61 @@
         </div>
     </section>
 
+    <!-- Timeline Section -->
+    <section class="timeline">
+        <div class="container">
+            <h2 class="section-title">Your Learning Journey</h2>
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-icon">🎯</div>
+                    <div class="timeline-content">
+                        <div class="timeline-week">Week 1-2</div>
+                        <h3 class="timeline-title">Foundation & Setup</h3>
+                        <p class="timeline-description">Master AI agent fundamentals, set up your development environment, and build your first simple agent. Learn the core concepts that power autonomous AI systems.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">🔧</div>
+                    <div class="timeline-content">
+                        <div class="timeline-week">Week 3-4</div>
+                        <h3 class="timeline-title">Advanced Capabilities</h3>
+                        <p class="timeline-description">Implement memory systems, tool usage, and reasoning capabilities. Your agents will start handling complex tasks and making intelligent decisions.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">🚀</div>
+                    <div class="timeline-content">
+                        <div class="timeline-week">Week 5-6</div>
+                        <h3 class="timeline-title">Real-World Projects</h3>
+                        <p class="timeline-description">Build customer service bots, data analysis agents, and automation tools. Deploy your agents to the cloud and see them work in production environments.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">💰</div>
+                    <div class="timeline-content">
+                        <div class="timeline-week">Week 7-8</div>
+                        <h3 class="timeline-title">Monetization & Business</h3>
+                        <p class="timeline-description">Learn pricing strategies, find clients, and build a sustainable AI consulting business. Turn your new skills into a profitable venture.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">🏆</div>
+                    <div class="timeline-content">
+                        <div class="timeline-week">Beyond</div>
+                        <h3 class="timeline-title">Continued Success</h3>
+                        <p class="timeline-description">Join our community, access lifetime updates, and stay ahead of AI trends. Your journey in agentic AI has just begun!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -488,8 +660,8 @@
             });
         }, observerOptions);
 
-        // Observe all feature cards, content items, and testimonial cards
-        document.querySelectorAll('.feature-card, .content-item, .testimonial-card').forEach(el => {
+        // Observe all feature cards, content items, testimonial cards, and timeline items
+        document.querySelectorAll('.feature-card, .content-item, .testimonial-card, .timeline-item').forEach(el => {
             observer.observe(el);
         });
     </script>
